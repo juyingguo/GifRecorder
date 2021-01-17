@@ -1,11 +1,16 @@
 cmake_minimum_required(VERSION 3.4.1)
 set(CMAKE_VERBOSE_MAKEFILE on)
 
+message("当前CMake的路径是：${CMAKE_SOURCE_DIR}")
+message("当前 CMAKE_ANDROID_ARCH_ABI 是：${CMAKE_ANDROID_ARCH_ABI}")
 
 set(LINK_DIR ${CMAKE_CURRENT_LIST_DIR}/../jniLibs/armeabi-v7a)
 link_directories(${LINK_DIR})
 
-set(INCLUDE_DIR "/home/hm/ffmpeg/ffmpeg_source/ffmpeg-3.4.1")
+#原项目博主使用的ffmpeg
+#set(INCLUDE_DIR "/home/hm/ffmpeg/ffmpeg_source/ffmpeg-3.4.1")
+set(INCLUDE_DIR "I:/juying/ffmpeg/ffmpeg-3.1.11-include")
+message("当前 INCLUDE_DIR 的路径是：${INCLUDE_DIR}")
 #头文件目录设置为ffmpeg-3.4.1源码目录及CMakeLists.txt文件所在目录
 #也可以不显式指定CMakeLists.txt文件所在目录，该目录默认包含在搜索目录中
 include_directories(${CMAKE_CURRENT_LIST_DIR} ${INCLUDE_DIR})
